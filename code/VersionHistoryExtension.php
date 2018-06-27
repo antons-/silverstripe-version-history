@@ -95,10 +95,10 @@ class VersionHistoryExtension extends DataExtension
                 'Type' => 'Field',
             );
         }
-        foreach ($this->owner->hasOne() as $has1) {
-            $fieldNames[$has1] = array(
-                'FieldName' => $has1.'ID',
-                'Name' => $has1,
+        foreach ($this->owner->hasOne() as $relation => $class) {
+            $fieldNames[$relation] = array(
+                'FieldName' => $relation.'ID',
+                'Name' => $relation,
                 'Type' => 'HasOne',
             );
         }
